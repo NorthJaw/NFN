@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promises</title>
+</head>
+
+
+<body>
+
+
+<script>
+// an immediately resolved promise
+const myProimse = new Promise((resolve, reject) => {
+  if (Math.random() * 100 < 90) {
+    reject(new Error('The promise was rejected by using reject function.'));
+  }
+  throw new Error('The promise was rejected by throwing an error');
+});
+
+myProimse.then(
+  () => console.log('resolved'), 
+  (error) => console.log(error.message)
+);
+
+
+</script>
+
+
+</body>
+</html>

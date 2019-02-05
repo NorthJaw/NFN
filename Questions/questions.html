@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Questions</title>
+
+  <script type="text/javascript" src="questions.json"></script>
+</head>
+<body>
+
+<!--
+<div class="targetP" style="height: 100px; width: 600px; overflow-y: scroll; border-color:black; border-style: solid;"> </div>
+
+<div class="targetP2" style="height: 100px; width: 600px; overflow-y: scroll; border-color:black; border-style: solid; margin-top: 20px;"> </div>
+
+-->
+
+<div class="targetP3" style="height: 100px; width: 600px; overflow-y: scroll; border-color:black; border-style: solid; border-width: 1px; margin: 20px 0 20px 0;"> </div>
+
+<form name="customForm" id="custom">
+    <input type="text" name="id" placeholder="Enter ID">
+</form>
+
+
+<script>
+
+	const local_data = JSONdata;
+	//const para = document.querySelector('.targetP');
+	//const para2 = document.querySelector('.targetP2');
+	const para3 = document.querySelector('.targetP3');
+
+	let idToFind = 0;
+
+	document.customForm.addEventListener('submit', function(e) {
+	  e.preventDefault();
+	  const id = this.id.value;
+	  this.reset();
+	  console.log(id);
+
+	  const list3 = local_data.question_list.questions.find( data => {
+		return data.id == id;
+	  });
+
+	  if(list3 == undefined){
+	  	//alert('ID Not Found');
+
+	  	para3.innerHTML = `<p> ID not found</p>`;
+	  }
+
+	  else
+	  {
+	  	const displist=[];
+	  
+	  	  for (listItems in list3){
+
+	  	  		/*if(listItems == 'tags'){
+	  	  			for(tag in list3[listItems]){
+	  	  				//console.log(list3[listItems][tag]);
+	  	  				console.log(tag);
+	  	  				//console.log(listItems);
+	  	  				displist.push(`<li>${tag} : ${list3[listItems][tag]}</li>`);
+	  	  			}
+	  	  		}
+
+	  	  		else{
+	  				displist.push(`<li>${listItems} : ${list3[listItems]}</li>`);
+	  			}
+	  			*/
+
+	  			displist.push(`<li>${listItems} : ${list3[listItems]}</li>`);
+	  	  }
+	  
+	  	  para3.innerHTML = displist.join('');
+	  }
+	});
+
+	/*
+
+	const result = local_data.question_list.questions.filter( data => data.parent_id == 0);
+
+	//console.log(result);
+
+	const list = result.map( data => {
+		const result_string = JSON.stringify(data);
+		return `<li>${result_string}</li>`
+	}).join('');
+
+	var disp=[];
+
+	const list2 = result.map( data => {
+		for (data_ in data){
+			//console.log(data_, data[data_]);
+			disp.push(`<li>${data_} : ${data[data_]}</li>`);
+		}
+	});
+
+	//console.log(list3);
+
+	para.innerHTML = list;
+	para2.innerHTML = disp.join('');
+
+	*/
+
+</script>
+
+
+</body>
+</html>

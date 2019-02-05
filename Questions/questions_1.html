@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Questions</title>
+
+  <script type="text/javascript" src="questions.json"></script>
+</head>
+<body>
+
+<div class="targetDiv" style="height: 100px; width: 600px; overflow-y: scroll; border-color:black; border-style: solid; border-width: 1px; margin: 20px 0 20px 0;"> </div>
+
+<div class="targetDiv2" style="height: 100px; width: 600px; overflow-y: scroll; border-color:black; border-style: solid; border-width: 1px; margin: 20px 0 20px 0;"> </div>
+
+<script>
+
+	const local_data = JSONdata;
+	const div = document.querySelector('.targetDiv');
+	const div2 = document.querySelector('.targetDiv2');
+
+	const result = local_data.question_list.questions.map( data => {
+		name = data['name'];
+		parent_id = data['parent_id'];
+		return `<li>Name: ${name}, Parent_id: ${parent_id}</li>`
+	});
+
+	const result2 = local_data.question_list.questions
+		.filter(data => {
+			return data.parent_id == 0
+		}).map(data_ => {
+	 	name = data_['name'];
+		parent_id = data_['parent_id'];
+		return `<li>Name: ${name}, Parent_id: ${parent_id}</li>`
+	 });
+
+	div.innerHTML = result.join('');
+	div2.innerHTML = result2.join('');
+
+	//const result = local_data.question_list.questions.filter( data => data.parent_id == 0);
+</script>
+
+
+</body>
+</html>
