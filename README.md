@@ -1,11 +1,11 @@
 # NFN
 
-- [ ] JavaScript - Map, Reduce, Filter
+- [x] JavaScript - Map, Reduce, Filter
 
-- [ ] ES6
+- [x] ES6
 
-- [ ] React - Docs
+- [x] React - Docs
 
-- [ ] React - Lifecycle Methods
+- [x] React - Lifecycle Methods
 
 - [ ] HTTP Methods(https://assertible.com/blog/7-http-methods-every-web-developer-should-know-and-how-to-test-them) 
