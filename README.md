@@ -19,3 +19,5 @@ Video: https://www.youtube.com/watch?v=568g8hxJJp4
 Doc: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function  
 Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API  
 News API: https://newsapi.org/
+
+- [x] To Do App with Categories
