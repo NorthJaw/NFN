@@ -21,3 +21,7 @@ Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 News API: https://newsapi.org/
 
 - [x] To Do App with Categories
+
+- [x] Expense Tracker with Context API
+
+- [x] Expense Trancker with Context API + React-Router
